@@ -4,6 +4,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
+
 public class Fantome extends Personnage {
 
     private Rectangle basCorps;
@@ -39,8 +41,8 @@ public class Fantome extends Personnage {
     }
 
     @Override
-    public void deplacerAGauche() {
-        super.deplacerAGauche();
+    public void deplacerAGauche(ArrayList<Obstacle> obstacles) {
+        super.deplacerAGauche(obstacles);
         retineGauche.setCenterX(oeilGauche.getCenterX() - 1);
         retineDroite.setCenterX(oeilDroit.getCenterX() - 1);
         // Pour eviter de regarder en diagonale
@@ -49,8 +51,8 @@ public class Fantome extends Personnage {
     }
 
     @Override
-    public void deplacerADroite(double largeurJeu) {
-        super.deplacerADroite(largeurJeu);
+    public void deplacerADroite(double largeurJeu, ArrayList<Obstacle> obstacles) {
+        super.deplacerADroite(largeurJeu, obstacles);
         retineGauche.setCenterX(oeilGauche.getCenterX() + 1);
         retineDroite.setCenterX(oeilDroit.getCenterX() + 1);
         // Pour eviter de regarder en diagonale
@@ -59,8 +61,8 @@ public class Fantome extends Personnage {
     }
 
     @Override
-    public void deplacerEnBas(double hauteurJeu) {
-        super.deplacerEnBas(hauteurJeu);
+    public void deplacerEnBas(double hauteurJeu, ArrayList<Obstacle> obstacles) {
+        super.deplacerEnBas(hauteurJeu, obstacles);
         retineGauche.setCenterY(oeilGauche.getCenterY() + 1);
         retineDroite.setCenterY(oeilDroit.getCenterY() + 1);
         // Pour eviter de regarder en diagonale
@@ -69,8 +71,8 @@ public class Fantome extends Personnage {
     }
 
     @Override
-    public void deplacerEnHaut(double hauteurJeu) {
-        super.deplacerEnHaut(hauteurJeu);
+    public void deplacerEnHaut(double hauteurJeu, ArrayList<Obstacle> obstacles) {
+        super.deplacerEnHaut(hauteurJeu, obstacles);
         retineGauche.setCenterY(oeilGauche.getCenterY() - 1);
         retineDroite.setCenterY(oeilDroit.getCenterY() - 1);
         // Pour eviter de regarder en diagonale
